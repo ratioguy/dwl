@@ -176,7 +176,7 @@ static const Key keys[] = {
 
 	/* My Bindings */
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_b,           spawn,            SHCMD("firefox") },
-	{ MODKEY,                    XKB_KEY_v,           spawn,            SHCMD("cliphist list | mew -l 5 | cliphist decode | wl-copy") },
+	{ MODKEY,                    XKB_KEY_v,           spawn,            SHCMD("cliphist list | mew -l 5 -i | cliphist decode | wl-copy") },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_v,           spawn,            SHCMD("cliphist wipe") },
 	{ MODKEY,                    XKB_KEY_e,           spawn,            SHCMD("foot -e lf") },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_m,           spawn,            SHCMD("foot -e ncmpcpp") },
