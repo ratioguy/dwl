@@ -178,7 +178,7 @@ static const Key keys[] = {
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_b,           spawn,            SHCMD("firefox") },
 	{ MODKEY,                    XKB_KEY_v,           spawn,            SHCMD("cliphist list | mew -l 5 -i | cliphist decode | wl-copy") },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_v,           spawn,            SHCMD("cliphist wipe") },
-	{ MODKEY,                    XKB_KEY_e,           spawn,            SHCMD("foot -e lf") },
+	{ MODKEY,                    XKB_KEY_e,           spawn,            SHCMD("foot -e shfm") },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_m,           spawn,            SHCMD("foot -e ncmpcpp") },
 	{ MODKEY,                    XKB_KEY_n,           spawn,            SHCMD("foot -e newsraft") },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_t,           spawn,            SHCMD("foot -e htop") },
