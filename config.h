@@ -80,7 +80,7 @@ static const int drag_lock = 1;
 static const int natural_scrolling = 0;
 static const int disable_while_typing = 1;
 static const int left_handed = 0;
-static const int middle_button_emulation = 1;
+static const int middle_button_emulation = 0;
 static const int enable_primary_selection = 0;
 /* You can choose between:
 LIBINPUT_CONFIG_SCROLL_NO_SCROLL
@@ -178,7 +178,7 @@ static const Key keys[] = {
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_b,           spawn,            SHCMD("firefox") },
 	{ MODKEY,                    XKB_KEY_v,           spawn,            SHCMD("cliphist list | mew -l 5 -i | cliphist decode | wl-copy") },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_v,           spawn,            SHCMD("cliphist wipe") },
-	{ MODKEY,                    XKB_KEY_e,           spawn,            SHCMD("footclient -e wait 0.1 ; ~/.local/bin/shfm") },
+	{ MODKEY,                    XKB_KEY_e,           spawn,            SHCMD("footclient -e ~/.local/bin/shfm-terminal.sh") },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_m,           spawn,            SHCMD("footclient -e ncmpcpp") },
 	{ MODKEY,                    XKB_KEY_n,           spawn,            SHCMD("footclient -e newsraft") },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_t,           spawn,            SHCMD("footclient -e htop") },
