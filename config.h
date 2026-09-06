@@ -33,10 +33,10 @@ static const Rule rules[] = {
 	{ "dialog",           NULL,			0,            1,           -1 },
 	{ "gimp-file-open",   NULL,			0,            0,            1 },
 	{ "Thunar",           NULL,			0,            1,           -1 },
-	{ "foot",             "youtube-launcher",       0,            1,           -1 },
-	{ "foot",             "youtube-downloader",     0,            1,           -1 },
-	{ "foot",             "music-downloader",       0,            1,           -1 },
-	{ "foot",             "pulsemixer",             0,            1,           -1 },
+	{ "footclient",       "youtube-launcher",       0,            1,           -1 },
+	{ "footclient",       "youtube-downloader",     0,            1,           -1 },
+	{ "footclient",       "music-downloader",       0,            1,           -1 },
+	{ "footclient",       "pulsemixer",             0,            1,           -1 },
     /* default/example rule: can be changed but cannot be eliminated; at least one rule must exist */
 };
 
@@ -130,7 +130,7 @@ static const enum libinput_config_tap_button_map button_map = LIBINPUT_CONFIG_TA
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *termcmd[] = { "foot", NULL };
+static const char *termcmd[] = { "footclient", NULL };
 
 static const Key keys[] = {
 	/* Note that Shift changes certain key codes: 2 -> at, etc. */
@@ -178,14 +178,14 @@ static const Key keys[] = {
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_b,           spawn,            SHCMD("firefox") },
 	{ MODKEY,                    XKB_KEY_v,           spawn,            SHCMD("cliphist list | mew -l 5 -i | cliphist decode | wl-copy") },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_v,           spawn,            SHCMD("cliphist wipe") },
-	{ MODKEY,                    XKB_KEY_e,           spawn,            SHCMD("foot -e ~/.local/bin/shfm") },
-	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_m,           spawn,            SHCMD("foot -e ncmpcpp") },
-	{ MODKEY,                    XKB_KEY_n,           spawn,            SHCMD("foot -e newsraft") },
-	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_t,           spawn,            SHCMD("foot -e htop") },
-	{ MODKEY,                    XKB_KEY_u,           spawn,            SHCMD("foot -T pulsemixer -e pulsemixer ") },
-	{ MODKEY,                    XKB_KEY_y,           spawn,            SHCMD("foot -T youtube-launcher -e ~/.local/bin/yt-launcher.sh") },
-	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_y,           spawn,            SHCMD("foot -T youtube-downloader -e ~/.local/bin/yt-downloader.sh") },
-	{ MODKEY|WLR_MODIFIER_ALT,   XKB_KEY_m,           spawn,            SHCMD("foot -T music-downloader -e ~/.local/bin/music-downloader.sh") },
+	{ MODKEY,                    XKB_KEY_e,           spawn,            SHCMD("footclient -e wait 0.1 ; ~/.local/bin/shfm") },
+	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_m,           spawn,            SHCMD("footclient -e ncmpcpp") },
+	{ MODKEY,                    XKB_KEY_n,           spawn,            SHCMD("footclient -e newsraft") },
+	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_t,           spawn,            SHCMD("footclient -e htop") },
+	{ MODKEY,                    XKB_KEY_u,           spawn,            SHCMD("footclient -T pulsemixer -e pulsemixer ") },
+	{ MODKEY,                    XKB_KEY_y,           spawn,            SHCMD("footclient -T youtube-launcher -e ~/.local/bin/yt-launcher.sh") },
+	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_y,           spawn,            SHCMD("footclient -T youtube-downloader -e ~/.local/bin/yt-downloader.sh") },
+	{ MODKEY|WLR_MODIFIER_ALT,   XKB_KEY_m,           spawn,            SHCMD("footclient -T music-downloader -e ~/.local/bin/music-downloader.sh") },
 	{ 0,                XKB_KEY_XF86AudioRaiseVolume, spawn, 	    SHCMD("bash ~/.local/bin/volume.sh up") },
 	{ 0,                XKB_KEY_XF86AudioLowerVolume, spawn, 	    SHCMD("bash ~/.local/bin/volume.sh down") },
 	{ 0,                XKB_KEY_XF86AudioMute,        spawn, 	    SHCMD("bash ~/.local/bin/volume.sh mute") },
