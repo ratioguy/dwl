@@ -135,7 +135,7 @@ static const char *termcmd[] = { "footclient", NULL };
 static const Key keys[] = {
 	/* Note that Shift changes certain key codes: 2 -> at, etc. */
 	/* modifier                  key                  function          argument */
-	{ MODKEY,                    XKB_KEY_p,           spawn,            SHCMD("mew-run -i") },
+	{ MODKEY,                    XKB_KEY_p,           spawn,            SHCMD("killall mew || mew-run -i") },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_Return,      spawn,            {.v = termcmd} },
 	{ MODKEY,                    XKB_KEY_b,           togglebar,        {0} },
 	{ MODKEY,                    XKB_KEY_j,           focusstack,       {.i = +1} },
@@ -192,8 +192,8 @@ static const Key keys[] = {
 	{ MODKEY,                    XKB_KEY_w,           spawn, 	    SHCMD("bash ~/.local/bin/volume.sh up") },
 	{ MODKEY,                    XKB_KEY_s,           spawn, 	    SHCMD("bash ~/.local/bin/volume.sh down") },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_s,           spawn, 	    SHCMD("bash ~/.local/bin/volume.sh mute") },
-	{ MODKEY,                    XKB_KEY_o,           spawn, 	    SHCMD("pactl set-default-sink alsa_output.usb-HP_HP_Speaker_Bar-00.analog-stereo ; killall easyeffects ; notify-send -t 8000 'Output: External Speaker'") },
-	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_o,           spawn, 	    SHCMD("pactl set-default-sink alsa_output.pci-0000_80_1f.3.analog-stereo ; setsid -f easyeffects --gapplication-service ; notify-send -t 8000 'Output: Headphones'") },
+	{ MODKEY,                    XKB_KEY_o,           spawn, 	    SHCMD("pactl set-default-sink alsa_output.usb-HP_HP_Speaker_Bar-00.analog-stereo ; notify-send -t 8000 'Output: External Speaker'") },
+	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_o,           spawn, 	    SHCMD("pactl set-default-sink alsa_output.pci-0000_80_1f.3.analog-stereo ; notify-send -t 8000 'Output: Headphones'") },
 	{ MODKEY,                    XKB_KEY_z,           spawn, 	    SHCMD("~/.local/bin/screenshot-wl.sh select") },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_z,           spawn, 	    SHCMD("~/.local/bin/screenshot-wl.sh screen") },
 	{ MODKEY,                    XKB_KEY_backslash,   spawn, 	    SHCMD("playerctl play-pause") },
